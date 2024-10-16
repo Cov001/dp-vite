@@ -64,7 +64,7 @@ function App() {
         socket.off("connect");
       };
     }
-  }, []);
+  }, [location.pathname, localStorage.getItem("userData"), navigate]);
   useEffect(() => {
     if (
       location.pathname !== "/sign-in" &&

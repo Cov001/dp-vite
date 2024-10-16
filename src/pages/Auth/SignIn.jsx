@@ -9,7 +9,6 @@ const SignIn = () => {
   const [pass, setPass] = useState("");
   const { state, dispatch } = useContext(AppContext);
   const navigate = useNavigate();
-  console.log(import.meta.env.VITE_API_PRODUCTION);
   const url = import.meta.env.VITE_API_PRODUCTION;
 
   const handleSignIn = async () => {
