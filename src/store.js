@@ -157,6 +157,7 @@ export const reducer = (state = initialState, action) => {
       };
 
     case "USER_LOGOUT":
+      localStorage.removeItem("userData");
       return {
         ...state,
         user: {
