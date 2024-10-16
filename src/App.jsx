@@ -49,8 +49,7 @@ function App() {
     if (savedUserData) {
       const userData = JSON.parse(savedUserData);
       dispatch({ type: "USER_LOGIN", payload: userData });
-      const url =
-        enviromentAPI === "production" ? productionAPI : developmentAPI;
+      const url = import.meta.env.VITE_API_PRODUCTION;
 
       console.log(`Environment: ${enviromentAPI}`);
       const socket = io(url, {});
