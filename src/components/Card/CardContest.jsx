@@ -24,10 +24,8 @@ const CardContest = ({
   const [examCountdown, setExamCountdown] = useState(""); // Thời gian đếm ngược cho examStart
   const { dispatch } = useContext(AppContext);
   const [res, setRes] = useState(0);
-  const url =
-    import.meta.env.VITE_API_NODE_ENV === "production"
-      ? import.meta.env.VITE_API_PRODUCTION
-      : import.meta.env.VITE_API_DEVELOPMENT;
+  const url = import.meta.env.VITE_API_PRODUCTION;
+
 
   useEffect(() => {
     const calculateTimeLeft = (targetTime) => {

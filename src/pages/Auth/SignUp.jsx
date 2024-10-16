@@ -12,10 +12,8 @@ const SignUp = () => {
   const [confirmPass, setConfirm] = useState("");
   const [pass, setPass] = useState("");
   const navigate = useNavigate();
-  const url =
-    import.meta.env.VITE_API_NODE_ENV === "production"
-      ? import.meta.env.VITE_API_PRODUCTION
-      : import.meta.env.VITE_API_DEVELOPMENT;
+  const url = import.meta.env.VITE_API_PRODUCTION;
+
 
   const { dispatch } = useContext(AppContext);
 

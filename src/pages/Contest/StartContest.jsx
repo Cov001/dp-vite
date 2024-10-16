@@ -23,11 +23,8 @@ const TableTask = () => {
   const navigate = useNavigate();
   const userData = JSON.parse(localStorage.getItem("userData"));
   const usT = userData ? userData.token : null;
+  const url = import.meta.env.VITE_API_PRODUCTION;
 
-  const url =
-    import.meta.env.VITE_API_NODE_ENV === "production"
-      ? import.meta.env.VITE_API_PRODUCTION
-      : import.meta.env.VITE_API_DEVELOPMENT;
 
   const { id } = useParams();
 

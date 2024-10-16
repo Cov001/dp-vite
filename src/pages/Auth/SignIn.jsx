@@ -9,13 +9,9 @@ const SignIn = () => {
   const [pass, setPass] = useState("");
   const { state, dispatch } = useContext(AppContext);
   const navigate = useNavigate();
-  console.log(import.meta.env.VITE_API_NODE_ENV === "production"
-      ? import.meta.env.VITE_API_PRODUCTION
-      : import.meta.env.VITE_API_DEVELOPMENT);
-  const url =
-    import.meta.env.VITE_API_NODE_ENV === "production"
-      ? import.meta.env.VITE_API_PRODUCTION
-      : import.meta.env.VITE_API_DEVELOPMENT;
+  
+  const url = import.meta.env.VITE_API_PRODUCTION;
+ 
 
   
   const handleSignIn = async () => {

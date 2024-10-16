@@ -6,10 +6,8 @@ import { toast } from "react-toastify";
 const TableResult = () => {
   const [data, setData] = useState([]);
   const { id } = useParams();
-  const url =
-    import.meta.env.VITE_API_NODE_ENV === "production"
-      ? import.meta.env.VITE_API_PRODUCTION
-      : import.meta.env.VITE_API_DEVELOPMENT;
+  const url = import.meta.env.VITE_API_PRODUCTION;
+
 
   useEffect(() => {
     const getData = async () => {
