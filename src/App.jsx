@@ -49,21 +49,22 @@ function App() {
     if (savedUserData) {
       const userData = JSON.parse(savedUserData);
       dispatch({ type: "USER_LOGIN", payload: userData });
+      const url =
+        enviromentAPI === "production" ? productionAPI : developmentAPI;
+
+      console.log(`Environment: ${enviromentAPI}`);
+      const socket = io(url, {});
+
+      dispatch({ type: "SET_SOCKET_CONNECTION", payload: { socket: socket } });
+
+      socket.on("connect", () => {
+        console.log(socket.id);
+      });
+
+      return () => {
+        socket.off("connect");
+      };
     }
-    const url = enviromentAPI === "production" ? productionAPI : developmentAPI;
-
-    console.log(`Environment: ${enviromentAPI}`);
-    const socket = io(url, {});
-
-    dispatch({ type: "SET_SOCKET_CONNECTION", payload: { socket: socket } });
-
-    socket.on("connect", () => {
-      console.log(socket.id);
-    });
-
-    return () => {
-      socket.off("connect");
-    };
   }, []);
   useEffect(() => {
     if (
