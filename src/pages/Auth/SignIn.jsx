@@ -13,6 +13,8 @@ const SignIn = () => {
     import.meta.env.VITE_API_NODE_ENV === "production"
       ? import.meta.env.VITE_API_PRODUCTION
       : import.meta.env.VITE_API_DEVELOPMENT;
+
+  console.log(url);
   const handleSignIn = async () => {
     if (email === "" || pass === "") {
       toast.warning("Please fill all fields!");
